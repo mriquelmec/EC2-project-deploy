@@ -7,7 +7,7 @@ const Main = () => {
     const [pet, setPet] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/pet/getPets')
+        axios.get('https://13.60.193.203/pet/getPets')
         .then((res)=>{
             console.log(res.data)
             setPet(res.data)

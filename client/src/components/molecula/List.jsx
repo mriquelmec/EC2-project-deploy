@@ -8,7 +8,7 @@ const List = () => {
     const [list, setList] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/pet/getPets')
+        axios.get('https://13.60.193.203/pet/getPets')
             .then((res) => {
                 const sortedList = res.data.sort((a, b) => a.type.localeCompare(b.type));
                 setList(sortedList);

@@ -11,7 +11,7 @@ const UpdateForm = () => {
     const [pet, setPet] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/pet/${id}`)
+        axios.get(`https://13.60.193.203/pet/${id}`)
             .then((res) => {
                 setPet(res.data);
                 formik.setValues({
@@ -55,7 +55,7 @@ const UpdateForm = () => {
                 .min(3, 'La habilidad 3 debe tener al menos 3 caracteres'),
         }),
         onSubmit: (values, { setSubmitting, setErrors }) => {
-            axios.put(`http://localhost:8000/pet/update/${id}`, values)
+            axios.put(`https://13.60.193.203/pet/update/${id}`, values)
                 .then((res) => {
                     console.log(res);
                     navigate('/pet/getPets');
