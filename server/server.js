@@ -16,7 +16,7 @@ const port = process.env.PORT || 8000;
 // Middlewares de seguridad
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://13.60.193.203',  // Reemplaza con la IP o dominio de tu frontend
+    origin: ['http://13.60.193.203', 'http://localhost:8000'],  // Reemplaza con la IP o dominio de tu frontend
     credentials: true,               // Para permitir cookies
     methods: 'GET,POST,PUT,DELETE',  // Métodos permitidos
     allowedHeaders: 'Content-Type,Authorization' // Cabeceras permitidas
@@ -32,7 +32,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/pet', petRouter);
 app.use(errorHandler);
 
-// Conexión a la base de datos
 conectarDB();
 
 app.listen(port, () => {
