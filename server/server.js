@@ -16,7 +16,7 @@ const port = process.env.PORT || 8000;
 
 app.use(cookieParser());
 app.use(cors({
-    origin: ['http://13.60.193.203', 'http://localhost:8000', 'http://localhost:5173'],  
+    origin: ['http://13.60.193.203', 'http://localhost:8000', 'http://localhost:5173', 'https://13.60.193.203:8000', 'http://13.60.193.203:8000'],  
     credentials: true,               
     methods: 'GET,POST,PUT,DELETE',  
     allowedHeaders: 'Content-Type,Authorization' 
