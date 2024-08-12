@@ -40,7 +40,7 @@ const Form = () => {
         },
         validationSchema,
         onSubmit: (values, { setSubmitting, setErrors }) => {
-            axios.post('https://13.60.193.203/pet/create', values)
+            axios.post('https://13.60.193.203:8000/pet/create', values)
                 .then(res => {
                     console.log(res);
                     navigate('/pet/getPets');

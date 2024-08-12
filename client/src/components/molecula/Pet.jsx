@@ -10,7 +10,7 @@ const Pet = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`https://13.60.193.203/pet/${id}`)
+        axios.get(`https://13.60.193.203:8000/pet/${id}`)
             .then((res) => {
                 setPet(res.data);
             }).catch((err) => {
@@ -19,7 +19,7 @@ const Pet = () => {
     }, [id]);
 
     const deleteHandler = () => {
-        axios.delete(`https://13.60.193.203/pet/delete/${id}`)
+        axios.delete(`https://13.60.193.203:8000/pet/delete/${id}`)
             .then((res) => {
                 navigate('/pet/getPets');
             }).catch((err) => {
